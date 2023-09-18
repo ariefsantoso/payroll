@@ -146,7 +146,7 @@ class KalkulasiGajiController extends Controller
 
             $bpjs = $this->calculateBPJS($karyawanItem);
             $nwnp = $this->calculateNWNP($request->sakit[$karyawanItem->nik], $karyawanItem);
-            $insentif =  $this->calculateIncentive($karyawanItem);
+            $gfcfg =  $this->calculateIncentive($karyawanItem);
 
             $data = [
                 'nik' => $karyawanItem->nik,
@@ -154,7 +154,7 @@ class KalkulasiGajiController extends Controller
                 'lembur' => $lembur,
                 'bpjs' => $this->calculateBPJS($karyawanItem),
                 'nwnp' => $this->calculateNWNP($request->sakit[$karyawanItem->nik], $karyawanItem),
-                'insentif' =>  $this->calculateIncentive($karyawanItem),
+                'gfcfg' =>  $this->calculateIncentive($karyawanItem),
                 'total_gaji' => ($gajipokok + $tunjangan + $lembur + $insentif) - ($bpjs + $nwnp),
                 'post' => 'x'
             ];
